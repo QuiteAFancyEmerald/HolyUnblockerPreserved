@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /call/http
+Disallow: /call/http:
+Disallow: /call/http:/
+Disallow: /call/https
+Disallow: /call/https:
+Disallow: /call/https:/
