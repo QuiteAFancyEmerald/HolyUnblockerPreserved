@@ -1,3 +1,10 @@
+/* -----------------------------------------------
+/* Authors: OlyB
+/* MIT license: http://opensource.org/licenses/MIT
+/* Tab Cloak - Script
+/* v1.0.0
+/* ----------------------------------------------- */
+
 var date = new Date();
 date.setMonth(date.getMonth() + 12);
 date = date.toUTCString();
