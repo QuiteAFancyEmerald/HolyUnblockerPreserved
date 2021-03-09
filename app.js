@@ -14,6 +14,7 @@ var querystring = require('querystring');
 var express = require('express');
 var unblocker = require('unblocker');
 var Transform = require('stream').Transform;
+var minify = require('express-minify');
 
 var app = express();
 
@@ -59,12 +60,23 @@ var unblockerConfig = {
     ]
 };
 
-
-
 // this line must appear before any express.static calls (or anything else that sends responses)
 app.use(unblocker(unblockerConfig));
 
 // serve up static files *after* the proxy is run
+app.use(minify({
+  cache: false,
+  uglifyJsModule: null,
+  errorHandler: null,
+  jsMatch: /javascript/,
+  cssMatch: /css/,
+  jsonMatch: /json/,
+  sassMatch: /scss/,
+  lessMatch: /less/,
+  stylusMatch: /stylus/,
+  coffeeScriptMatch: /coffeescript/,
+}));
+
 app.use('/', express.static(__dirname + '/public'));
 
 // this is for users who's form actually submitted due to JS being disabled or whatever
