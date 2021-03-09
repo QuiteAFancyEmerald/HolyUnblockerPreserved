@@ -1,7 +1,7 @@
 User-agent: *
-Disallow: /call/http
-Disallow: /call/http:
-Disallow: /call/http:/
-Disallow: /call/https
-Disallow: /call/https:
-Disallow: /call/https:/
+Disallow: /proxy/http
+Disallow: /proxy/http:
+Disallow: /proxy/http:/
+Disallow: /proxy/https
+Disallow: /proxy/https:
+Disallow: /proxy/https:/
